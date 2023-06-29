@@ -1,40 +1,41 @@
-# Import
+# Importar
 from flask import Flask, render_template, request, send_from_directory
 
 
 app = Flask(__name__)
 
-# Form results
+# Resultados del formulario
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        # getting the selected image
+        # obtener la imagen seleccionada
         selected_image = request.form.get('image-selector')
 
-        # Assignment #2.Receiving the text
+        # Asignación #2. Recepción del texto
         
 
         # Assignment #3. Receiving the text's positioning
        
 
-        # Assignment #3. Receiving the text's colour
+        # Asignación #3. Recepción del posicionamiento del texto
         
 
         return render_template('index.html', 
-                               # Displaying the selected  image
+                               # Visualización de la imagen seleccionada
                                selected_image=selected_image, 
 
-                               # Assignment #2. Displaying the text
+                               # Asignación #2. Visualización del texto
                                
 
-                               # Assignment #3. Displaying the colour 
+                               #  Asignación #3. Visualización del color
                                
                                
-                               # Assignment #3. Displaying the text's positioning
+                               # Asignación #3. Visualización de la posición del texto
+
 
                                )
     else:
-        # Displaying the first image by default
+        # Mostrar la primera imagen por defecto
         return render_template('index.html', selected_image='logo.svg')
 
 
