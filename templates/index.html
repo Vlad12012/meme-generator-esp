@@ -37,8 +37,9 @@
               <option value="logo.svg" {% if selected_image == 'logo.svg' %}selected{% endif %}>Selecciona un meme</option>
               <option value="meme_1.jpg" {% if selected_image == 'meme_1.jpg' %}selected{% endif %}>Chica desastre</option>
               <option value="meme_2.jpg" {% if selected_image == 'meme_2.jpg' %}selected{% endif %}>Dos botones</option>
+              <option value="meme_3.jpeg" {% if selected_image == 'meme_3.jpeg' %}selected{% endif %}>Seguro</option>
               <!--Asignación #1. Añade nuevos memes aquí -->
-
+               
 
             </select>
           </li>
@@ -56,6 +57,7 @@
               <option value="white" {% if selected_color == 'white' %}selected{% endif %}>Blanco</option>
               <option value="black" {% if selected_color == 'black' %}selected{% endif %}>Negro</option>
               <!--Asignación adicional #1. Añada aquí nuevos colores -->
+              <option value="purple" {% if selected_color == 'purple' %}selected{% endif %}>Purpura</option>
 
 
             </select>
@@ -74,14 +76,22 @@
     </div>
     <div class="meme-block" id="memeBlock">
       
-      <p class="text_top" style="<!-- Asignación #3. Trasladar las variables a CSS -->">
+      <p class="text_top" style="
+        color: {{ selected_color }};
+        top: {{ text_top_y }}px;
+      ">
         <!-- Asignación #2. Colocación de la variable con el texto -->
+         {{ text_top }}
       </p>
 
       <img class="meme" src="{{ url_for('serve_images', path=selected_image) }}" alt="{{ selected_image }}">
 
-      <p class="text_bottom" style="<!-- Asignación #3. Trasladar las variables a CSS -->">
+      <p class="text_bottom" style="
+      color: {{ selected_color }};
+      bottom: {{ text_bottom_y }}px;
+      ">
         <!-- Asignación #2. Colocación de la variable con el texto -->
+         {{ text_bottom }}
       </p>
     </div>
     {% endblock %}
